@@ -74,5 +74,8 @@ namespace Tico.Animales.Business.EntAnimales
         public int Edad { get; set; }
         public decimal Peso { get; set; }
         public bool Estatus { get; set; }
+        public string FotoPortada { get; set; }
+        public string FotoMini { get; set; }
+        public string Video { get; set; }
     }
 }
