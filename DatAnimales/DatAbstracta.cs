@@ -13,7 +13,7 @@ namespace Tico.Animales.DatAnimales
     {
         public SqlConnection conn;
         public DatAbstracta() {
-            conn = new SqlConnection(UtiCrypto.DesEncriptar("poubbDovFVgmY7x1hBEfUshzh8KWs1EQCt2epwRk5aQatiYfz/5i4T7sTFTsQOWsBVscFbUrZsF71IWD6pFlKSg8ktNOgKfezFqVM9yI="));
+            conn = new SqlConnection(UtiCrypto.DesEncriptar("poubbDovFVgmY7x+1hBEfUshzh8KWs1EQCt2e+pwRk5aQatiYfz/M5i4T7sTFTsQOWsBVscFbUrZsF71IWD6pFlKSg8ktNOgKfezFqVM9yI="));
 
             ///Establecer la conexion desde la web config con el ConfigurationManager y agregamos la referencia desde datAnimales, pestañas ensamblado, elegir system.configuration y depues resolver            //conn = new SqlConnection();
             //conn.ConnectionString = ConfigurationManager.ConnectionStrings["NombreConexion"].ToString();

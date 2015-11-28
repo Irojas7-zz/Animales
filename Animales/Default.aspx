@@ -83,125 +83,204 @@
             </div>
             <!-- /.container-fluid -->
         </nav>
-        <div class="row">
-            <div class="col-md-6">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                    </ol>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
 
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <img src="http://3.bp.blogspot.com/-QYPG9xvMIvI/Vf8OytNdI-I/AAAAAAAEMV0/gQdqPC3wzjk/s1600/a%2B%25287%2529.png" alt="Perros" />
-                            <div class="carousel-caption">
-                                <h3>Perros</h3>
-                                <p>El mejor amigo del Hombre.</p>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="img/perro.jpg" />
+                                <div class="carousel-caption">
+                                    <h3>Perros</h3>
+                                    <p>El mejor amigo del Hombre.</p>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <img src="img/gato.jpg" />
+                                <div class="carousel-caption">
+                                    <h3>Gatos</h3>
+                                    <p>La mejor amiga de la mujer.</p>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <img src="img/tiburon.jpg" />
+                                <div class="carousel-caption">
+                                    <h3>Tiburon</h3>
+                                    <p>Tiburon tiburon.</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="item">
-                            <img src="http://i.ytimg.com/vi/sneZkmAxSis/hqdefault.jpg" alt="Gatos" />
-                            <div class="carousel-caption">
-                                <h3>Gatos</h3>
-                                <p>La mejor amiga de la mujer.</p>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="http://image.posta.com.mx/sites/default/files/tortuga-marina.jpg" alt="Tortugas" />
-                            <div class="carousel-caption">
-                                <h3>Tortugas</h3>
-                                <p>Las tortugas ninjas.</p>
-                            </div>
-                        </div>
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="myCarouselTwo" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarouselTwo" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarouselTwo" data-slide-to="1"></li>
+                            <li data-target="#myCarouselTwo" data-slide-to="2"></li>
+                        </ol>
 
-                    <!-- Left and right controls -->
-                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="img/leon.jpg" />
+                                <div class="carousel-caption">
+                                    <h3>Leones</h3>
+                                    <p>Rey de la Selva.</p>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <img src="img/pantera.jpg" />
+                                <div class="carousel-caption">
+                                    <h3>Pantera</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, molestiae, esse libero reprehenderit ullam assumenda sapiente placeat perspiciatis iusto et consequatur doloremque amet rerum vero saepe iure fuga at hic!</p>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <img src="img/vivora.jpg" />
+                                <div class="carousel-caption">
+                                    <h3>Vibora</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, esse veniam similique facilis itaque laboriosam id quaerat impedit cupiditate perspiciatis odio quidem consectetur repudiandae suscipit quasi deleniti et praesentium magni.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarouselTwo" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarouselTwo" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div id="myCarouselTwo" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarouselTwo" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarouselTwo" data-slide-to="1"></li>
-                        <li data-target="#myCarouselTwo" data-slide-to="2"></li>
-                    </ol>
-
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <img src="http://ichef-1.bbci.co.uk/news/ws/624/amz/worldservice/live/assets/images/2015/08/02/150802155216_leon1_624x351_alamy_nocredit.jpg" alt="Leones" />
-                            <div class="carousel-caption">
-                                <h3>Leones</h3>
-                                <p>Rey de la Selva.</p>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="http://mexico.cnn.com/media/2013/11/15/tigre-de-sumatra-animales-extincion.jpg" alt="Tigres" />
-                            <div class="carousel-caption">
-                                <h3>Tigres</h3>
-                                <p>Los tres triste tigres.</p>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <img src="http://acn.com.ve/wp-content/uploads/2015/03/acn_puma_referencial.jpg" alt="Pumas" />
-                            <div class="carousel-caption">
-                                <h3>Pumas</h3>
-                                <p>Goya, Goya, Cachun Cachun rara.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Left and right controls -->
-                    <a class="left carousel-control" href="#myCarouselTwo" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#myCarouselTwo" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <asp:PlaceHolder runat="server" ID="phAnimales" />
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <img src="" alt="" title="" />
+        </div>
+        <hr />
+        <div class="container">
+            <div class="row">
+                <asp:PlaceHolder runat="server" ID="phAnimales" />
+                <%--<div class="col-md-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">                            
+                            <a href="Informacion.aspx?id=2"><img src="img/hipopotamo.jpg" class="img-responsive" title="Descricion de Imagenes" /></a>
                         </div>
                         <div class="panel-body">
-                            <label id="Nombre">Nombre Animal:</label><br />
-                            <label id="Tipo">Tipo de Animal:</label><br />
-                            <label id="Genero">Genero Animal:</label><br />
-                            <label id="Peso">Peso Animal:</label><br />
-                            <label id="Color">Color del Animal:</label><br />
-                            <label id="FecAlta">Fecha de Ingreso:</label><br />
-                            <label id="Edad">Edad del Animal:</label><br />
-                            <label id="Existencias">Existencias:</label>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="img/hipoMini.jpg" class="img-responsive" />
+                                </div>
+                                <div class="col-md-8">
+                                    <label id="Nombre">Nombre Animal:</label><br />
+                                    <label id="Tipo">Tipo de Animal:</label><br />
+                                    <label id="Genero">Genero Animal:</label><br />                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <label id="Peso">Peso Animal:</label><br />                                    
+                                    <label id="FecAlta">Fecha de Ingreso:</label><br />
+                                    <label id="Edad">Edad del Animal:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label id="Color">Color del Animal:</label><br />
+                                    <label id="Existencias">Existencias:</label>
+                                </div>
+                            </div>
+                            <iframe width="640" height="360" src="https://www.youtube.com/embed/MrNUMWUKE2A" frameborder="0" allowfullscreen class="img-responsive" controls></iframe>
                         </div>
                         <div class="panel-footer">
                             <a href="Informacion.aspx" id="lnkIr">Ir a Información</a>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">                            
+                            <a href="Informacion.aspx?id=2"><img src="img/hipopotamo.jpg" class="img-responsive" title="Descricion de Imagenes" /></a>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="img/hipoMini.jpg" class="img-responsive" />
+                                </div>
+                                <div class="col-md-8">
+                                    <label id="Nombre">Nombre Animal:</label><br />
+                                    <label id="Tipo">Tipo de Animal:</label><br />
+                                    <label id="Genero">Genero Animal:</label><br />                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <label id="Peso">Peso Animal:</label><br />                                    
+                                    <label id="FecAlta">Fecha de Ingreso:</label><br />
+                                    <label id="Edad">Edad del Animal:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label id="Color">Color del Animal:</label><br />
+                                    <label id="Existencias">Existencias:</label>
+                                </div>
+                            </div>
+                            <iframe width="640" height="360" src="https://www.youtube.com/embed/MrNUMWUKE2A" frameborder="0" allowfullscreen class="img-responsive" controls></iframe>
+                        </div>
+                        <div class="panel-footer">
+                            <a href="Informacion.aspx" id="lnkIr">Ir a Información</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">                            
+                            <a href="Informacion.aspx?id=2"><img src="img/hipopotamo.jpg" class="img-responsive" title="Descricion de Imagenes" /></a>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="img/hipoMini.jpg" class="img-responsive" />
+                                </div>
+                                <div class="col-md-8">
+                                    <label id="Nombre">Nombre Animal:</label><br />
+                                    <label id="Tipo">Tipo de Animal:</label><br />
+                                    <label id="Genero">Genero Animal:</label><br />                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <label id="Peso">Peso Animal:</label><br />                                    
+                                    <label id="FecAlta">Fecha de Ingreso:</label><br />
+                                    <label id="Edad">Edad del Animal:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label id="Color">Color del Animal:</label><br />
+                                    <label id="Existencias">Existencias:</label>
+                                </div>
+                            </div>
+                            <iframe width="640" height="360" src="https://www.youtube.com/embed/MrNUMWUKE2A" frameborder="0" allowfullscreen class="img-responsive" controls></iframe>
+                        </div>
+                        <div class="panel-footer">
+                            <a href="Informacion.aspx" id="lnkIr">Ir a Información</a>
+                        </div>
+                    </div>
+                </div>--%>
             </div>
         </div>
     </form>
@@ -318,6 +397,6 @@
             </a>
         </div>
 
-    </form>--%>    
+    </form>--%>
 </body>
 </html>
