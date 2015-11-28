@@ -1,0 +1,11 @@
+C:\Tico\Animales\BusAnimales\bin\Debug\BusAnimales.dll
+C:\Tico\Animales\BusAnimales\bin\Debug\BusAnimales.pdb
+C:\Tico\Animales\BusAnimales\bin\Debug\DatAnimales.dll
+C:\Tico\Animales\BusAnimales\bin\Debug\EntAnimales.dll
+C:\Tico\Animales\BusAnimales\bin\Debug\UtilAnimales.dll
+C:\Tico\Animales\BusAnimales\bin\Debug\DatAnimales.pdb
+C:\Tico\Animales\BusAnimales\bin\Debug\EntAnimales.pdb
+C:\Tico\Animales\BusAnimales\bin\Debug\UtilAnimales.pdb
+C:\Tico\Animales\BusAnimales\obj\Debug\BusAnimales.csprojResolveAssemblyReference.cache
+C:\Tico\Animales\BusAnimales\obj\Debug\BusAnimales.dll
+C:\Tico\Animales\BusAnimales\obj\Debug\BusAnimales.pdb

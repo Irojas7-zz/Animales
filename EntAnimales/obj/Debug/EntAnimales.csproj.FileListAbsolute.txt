@@ -1,0 +1,5 @@
+C:\Tico\Animales\EntAnimales\bin\Debug\EntAnimales.dll
+C:\Tico\Animales\EntAnimales\bin\Debug\EntAnimales.pdb
+C:\Tico\Animales\EntAnimales\obj\Debug\EntAnimales.csprojResolveAssemblyReference.cache
+C:\Tico\Animales\EntAnimales\obj\Debug\EntAnimales.dll
+C:\Tico\Animales\EntAnimales\obj\Debug\EntAnimales.pdb
