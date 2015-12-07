@@ -12,61 +12,145 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-datetimepicker.css" rel="stylesheet" />
+
+    <style>
+        .input-group-addon {
+            background-color: beige;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="row">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="jumbotron">
-                        <img src="http://res.cloudinary.com/spotlio/image/upload/ilafnc55bhqfasvbxq4x.jpg" alt="zoo" />
-                    </div>
+            <div class="panel panel-success" style="margin:0 0 5px 0;">
+                <div class="panel-heading" style="height:100px; overflow:hidden; padding:0px;">
+                        <img src="http://res.cloudinary.com/spotlio/image/upload/ilafnc55bhqfasvbxq4x.jpg" alt="zoo" class="img-responsive" style="margin:auto;" />
                 </div>
             </div>
 
             <div class="panel panel-default col-sm-10 col-sm-offset-1">
                 <div class="panel-heading">
-                    <%--<img src="http://static.elobservador.com.uy/adjuntos/184/imagenes/000/316/0000316354.jpg" alt="animal" />--%>
-                    <h2>PORTADA</h2>
+                    <img src="https://i.ytimg.com/vi/EVT-dbvxZx0/hqdefault.jpg" alt="animal" class="img-responsive" style="margin: auto" />
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12 col-md-offset-5">
+                            <asp:FileUpload runat="server" ID="fuImag" />
+                        </div>
+                    </div>
                 </div>
                 <div class="panel-body">
-                    <div class="col-md-4">
-                        <%--<img src="http://ichef-1.bbci.co.uk/news/ws/624/amz/worldservice/live/assets/images/2015/08/02/150802155216_leon1_624x351_alamy_nocredit.jpg" alt="animaltwo" />--%>
-                        <h2>IMAGEN ANIMAL</h2>
-                    </div>
-                    <div class="col-md-8">
-                        <asp:DropDownList ID="ddlColor" runat="server">
-                            <asp:ListItem Text="[Color]"></asp:ListItem>
-                        </asp:DropDownList>
-                        <br />
-                        <asp:DropDownList ID="ddlTipo" runat="server">
-                            <asp:ListItem Text="[Tipo]"></asp:ListItem>
-                        </asp:DropDownList>
-                        <br />
-                        <asp:DropDownList ID="ddlGenero" runat="server">
-                            <asp:ListItem Text="[Genero]"></asp:ListItem>
-                        </asp:DropDownList>
-                        <br />
-                        <asp:TextBox runat="server" ID="txtNombre"></asp:TextBox>
-                        <br />
-                        <asp:TextBox runat="server" ID="txtExist"></asp:TextBox>
-                        <br />
-                        <asp:TextBox runat="server" ID="txtPeso"></asp:TextBox>
-                        <br />
-                        <asp:TextBox runat="server" ID="txtEdad"></asp:TextBox>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="http://ichef-1.bbci.co.uk/news/ws/624/amz/worldservice/live/assets/images/2015/08/02/150802155216_leon1_624x351_alamy_nocredit.jpg" alt="animaltwo" class="img-responsive" />
+                            <br />
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-0">
+                                    <asp:FileUpload runat="server" ID="FileUpload1" />
+                                </div>
+                            </div>
+                            <br />
+                            <%--<h2>IMAGEN ANIMAL</h2>--%>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class=" input-group-addon left">
+                                        <span class="glyphicon glyphicon-tint"></span>
+                                    </span>
+                                    <asp:DropDownList ID="ddlColor" runat="server" CssClass="form-control" AppendDataBoundItems="true">
+                                        <asp:ListItem Text="[Color]" Value="-1"></asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                                <br />
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-tag"></span>
+                                    </span>
+                                    <asp:DropDownList ID="ddlTipo" runat="server" CssClass="form-control" AppendDataBoundItems="true">
+                                        <asp:ListItem Text="[Tipo]" Value="-1"></asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                                <br />
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class=" glyphicon glyphicon-tags"></span>
+                                    </span>
+                                    <asp:DropDownList ID="ddlGenero" runat="server" CssClass="form-control" AppendDataBoundItems="true">
+                                        <asp:ListItem Text="[Genero]" Value="-1"></asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                                <br />
+                                <div class="input-group">
+                                    <span class="input-group-addon">Nombre</span>
+                                    <asp:TextBox runat="server" ID="txtNomb" CssClass="form-control"></asp:TextBox>
+                                </div>
+                                <br />
+                                <div class="input-group">
+                                    <asp:TextBox runat="server" ID="txtExit" CssClass="form-control"></asp:TextBox>
+                                    <span class="input-group-addon">Existencias</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <asp:TextBox runat="server" ID="txtPeso" CssClass="form-control" placeholder="Peso del Animal"></asp:TextBox>
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-piggy-bank"></span>
+                                    </span>
+                                </div>
+                                <br />
+                                <div class='input-group date' id='datetimepicker1'>
+                                    <asp:TextBox runat="server" ID="txtFech" class="form-control" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">Edad</span>
+                                <asp:TextBox runat="server" ID="txtEdad" CssClass="form-control"></asp:TextBox>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="panel-footer">
-                    <div class="col-sm-12">
-                        <h2>VIDEO </h2>
-                        <a href="#" id="lnkEditar">Editar </a>
-                        <a href="#" id="lnkBorrar">Borrar </a>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <%--<h2>VIDEO </h2>--%>
+                            <%--<iframe id="ifVide" runat="server" src="https://www.youtube.com/watch?v=Kgjkth6BRRY"></iframe>--%>
+                            <iframe width="640" height="360" src="https://www.youtube.com/embed/MrNUMWUKE2A" frameborder="0" allowfullscreen class="img-responsive" style="margin: auto" controls></iframe>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <asp:TextBox runat="server" ID="txtUrl" CssClass="form-control" placeholder="Url Video"></asp:TextBox>
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-film"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" id="lnkBorrar">Borrar </a>
+                            <a href="#" id="lnkEditar">Editar </a>
+                            <a href="#" id="lnkNuevo">Nuevo </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </form>
     <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/moment-with-locales.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+        });
+    </script>
 </body>
 </html>

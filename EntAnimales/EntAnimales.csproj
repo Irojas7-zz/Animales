@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntAnimal.cs" />
+    <Compile Include="EntCatalogos.cs" />
     <Compile Include="EntColor.cs" />
     <Compile Include="EntGenero.cs" />
     <Compile Include="EntTipo.cs" />

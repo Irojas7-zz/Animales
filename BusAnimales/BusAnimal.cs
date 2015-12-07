@@ -54,12 +54,12 @@ namespace Tico.Animales.BusAnimales
 
             ani.Id = dt.Rows[0]["Anim_Id"] is DBNull ? 0 : Convert.ToInt32(dt.Rows[0]["Anim_Id"]);
             ani.Nombre = dt.Rows[0]["Anim_Nomb"].ToString();
-            ani.Tipo_Id = Convert.ToInt32(dt.Rows[0]["Tipo_Id"]);
+            ani.Tipo_Id = Convert.ToInt32(dt.Rows[0]["Anim_Tipo_Id"]);
             ani.Tipo.Nombre = dt.Rows[0]["Tipo_Nomb"].ToString();
             ani.Color_Id = Convert.ToInt32(dt.Rows[0]["Anim_Colo_Id"]);
             ani.Color.Nombre = dt.Rows[0]["Colo_Nomb"].ToString();
             ani.Fecha_Alta = dt.Rows[0]["Anim_Fech_Alta"] is DBNull ? Convert.ToDateTime("01/01/1900") : Convert.ToDateTime(dt.Rows[0]["Anim_Fech_Alta"]);
-            ani.Genero_Id = Convert.ToInt32(dt.Rows[0]["Gene_Id"]);
+            ani.Genero_Id = Convert.ToInt32(dt.Rows[0]["Anim_Gene_Id"]);
             ani.Genero.Nombre = dt.Rows[0]["Gene_Nomb"].ToString();
             ani.Existencia = Convert.ToInt32(dt.Rows[0]["Anim_Exis"]);
             ani.Edad = Convert.ToInt32(dt.Rows[0]["Anim_Edad"]);
