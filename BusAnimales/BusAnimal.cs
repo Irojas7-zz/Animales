@@ -65,6 +65,9 @@ namespace Tico.Animales.BusAnimales
             ani.Edad = Convert.ToInt32(dt.Rows[0]["Anim_Edad"]);
             ani.Peso = Convert.ToDecimal(dt.Rows[0]["Anim_Peso"]);
             ani.Estatus = Convert.ToBoolean(dt.Rows[0]["Anim_Esta"]);
+            ani.FotoMini = dt.Rows[0]["Anim_Foto_Mini"].ToString();
+            ani.FotoPortada = dt.Rows[0]["Anim_Foto_Port"].ToString();
+            ani.Video = dt.Rows[0]["Anim_Video"].ToString();
 
             return ani;
         }

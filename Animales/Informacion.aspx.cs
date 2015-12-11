@@ -11,13 +11,16 @@ public partial class Informacion : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        int id = Request.QueryString["Id"] == null ? 0 : Convert.ToInt32(Request.QueryString["Id"]);
+        int id = 2;// Request.QueryString["Id"] == null ? 0 : Convert.ToInt32(Request.QueryString["Id"]);
+        if (!IsPostBack)
+        {
+            CargarCatalogos();
+        }
         if (id != 0)
         {
             CargarDatos(id);
         }
 
-        CargarCatalogos();
     }
 
     private void CargarDatos(int Id)
@@ -28,11 +31,15 @@ public partial class Informacion : System.Web.UI.Page
         txtExit.Text = Convert.ToString(ani.Existencia);
         txtPeso.Text = Convert.ToString(ani.Peso);
         txtFech.Text = Convert.ToString(ani.Fecha_Alta);
+        //txtFech.Text = ani.Fecha_Alta.ToString("dd/MM/yyyy");
         txtEdad.Text = Convert.ToString(ani.Edad);
         txtUrl.Text = ani.Video;
         ddlTipo.SelectedValue = Convert.ToString(ani.Tipo_Id);
         ddlColor.SelectedValue = Convert.ToString(ani.Color_Id);
         ddlGenero.SelectedValue = Convert.ToString(ani.Genero_Id);
+        imgPort.Src = Convert.ToString(ani.FotoPortada);
+        imgMini.Src = Convert.ToString(ani.FotoMini);
+        urlVideo.Src = ani.Video;
     }
 
     private void CargarCatalogos()

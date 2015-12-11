@@ -31,7 +31,7 @@
 
             <div class="panel panel-default col-sm-10 col-sm-offset-1">
                 <div class="panel-heading">
-                    <img src="https://i.ytimg.com/vi/EVT-dbvxZx0/hqdefault.jpg" alt="animal" class="img-responsive" style="margin: auto" />
+                    <img id="imgPort" alt="animal" class="img-responsive" style="margin: auto" runat="server" />
                     <br />
                     <div class="row">
                         <div class="col-md-12 col-md-offset-5">
@@ -42,7 +42,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-4">
-                            <img src="http://ichef-1.bbci.co.uk/news/ws/624/amz/worldservice/live/assets/images/2015/08/02/150802155216_leon1_624x351_alamy_nocredit.jpg" alt="animaltwo" class="img-responsive" />
+                            <img alt="animaltwo" class="img-responsive" runat="server" id="imgMini" />
                             <br />
                             <div class="row">
                                 <div class="col-md-4 col-md-offset-0">
@@ -121,8 +121,8 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <%--<h2>VIDEO </h2>--%>
-                            <%--<iframe id="ifVide" runat="server" src="https://www.youtube.com/watch?v=Kgjkth6BRRY"></iframe>--%>
-                            <iframe width="640" height="360" src="https://www.youtube.com/embed/MrNUMWUKE2A" frameborder="0" allowfullscreen class="img-responsive" style="margin: auto" controls></iframe>
+                            <%--<iframe id="ifVide" runat="server" src="https://www.youtube.com/watch?v=Kgjkth6BRRY  src="https://www.youtube.com/embed/MrNUMWUKE2A""></iframe>--%>
+                            <iframe width="640" height="360" frameborder="0" allowfullscreen class="img-responsive" style="margin: auto" controls runat="server" id="urlVideo"></iframe>
                             <br />
                             <div class="row">
                                 <div class="col-md-12">
@@ -149,7 +149,9 @@
     <script src="js/bootstrap-datetimepicker.js"></script>
     <script type="text/javascript">
         $(function () {
-            $('#datetimepicker1').datetimepicker();
+            $('#txtFech').datetimepicker({
+                format: 'DD/MM/YYYY hh:mm A',
+            });
         });
     </script>
 </body>
