@@ -75,5 +75,16 @@ namespace Tico.Animales.DatAnimales
             da.Fill(dt);
             return dt;
         }
+
+        public DataTable Eliminar(int Id)
+        {
+            SqlCommand comm = new SqlCommand("sp_Delete_Animal", conn);
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.Int, ParameterName = "@Id", Value = Id });
+            SqlDataAdapter da = new SqlDataAdapter(comm);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
     }
 }

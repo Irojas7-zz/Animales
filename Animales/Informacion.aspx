@@ -23,9 +23,9 @@
 <body>
     <form id="form1" runat="server">
         <div class="row">
-            <div class="panel panel-success" style="margin:0 0 5px 0;">
-                <div class="panel-heading" style="height:100px; overflow:hidden; padding:0px;">
-                        <img src="http://res.cloudinary.com/spotlio/image/upload/ilafnc55bhqfasvbxq4x.jpg" alt="zoo" class="img-responsive" style="margin:auto;" />
+            <div class="panel panel-success" style="margin: 0 0 5px 0;">
+                <div class="panel-heading" style="height: 100px; overflow: hidden; padding: 0px;">
+                    <img src="http://res.cloudinary.com/spotlio/image/upload/ilafnc55bhqfasvbxq4x.jpg" alt="zoo" class="img-responsive" style="margin: auto;" />
                 </div>
             </div>
 
@@ -35,18 +35,18 @@
                     <br />
                     <div class="row">
                         <div class="col-md-12 col-md-offset-5">
-                            <asp:FileUpload runat="server" ID="fuImag" />
+                            <asp:FileUpload runat="server" ID="fuFotoPortada" />
                         </div>
                     </div>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-4">
-                            <img alt="animaltwo" class="img-responsive" runat="server" id="imgMini" />
+                            <img src="" alt="animaltwo" class="img-responsive" runat="server" id="imgMini" />
                             <br />
                             <div class="row">
                                 <div class="col-md-4 col-md-offset-0">
-                                    <asp:FileUpload runat="server" ID="FileUpload1" />
+                                    <asp:FileUpload runat="server" ID="fuFotoMini" />
                                 </div>
                             </div>
                             <br />
@@ -124,20 +124,27 @@
                             <%--<iframe id="ifVide" runat="server" src="https://www.youtube.com/watch?v=Kgjkth6BRRY  src="https://www.youtube.com/embed/MrNUMWUKE2A""></iframe>--%>
                             <iframe width="640" height="360" frameborder="0" allowfullscreen class="img-responsive" style="margin: auto" controls runat="server" id="urlVideo"></iframe>
                             <br />
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <asp:TextBox runat="server" ID="txtUrl" CssClass="form-control" placeholder="Url Video"></asp:TextBox>
-                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-film"></span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#" id="lnkBorrar">Borrar </a>
-                            <a href="#" id="lnkEditar">Editar </a>
-                            <a href="#" id="lnkNuevo">Nuevo </a>
                         </div>
+                        <div class="col-md-12">
+                            <div class="input-group">
+                                <asp:TextBox runat="server" ID="txtUrl" CssClass="form-control" placeholder="Url Video"></asp:TextBox>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-film"></span>
+                                </span>
+                            </div>
+                            <br />
+                        </div>
+                        <div class="col-md-3"></div>
+                        <div class="col-sm-2 center-block">
+                            <asp:Button runat="server" ID="btnDelete" Text="Borrar" CssClass="form-control" OnClick="btnDelete_Click" />
+                        </div>
+                        <div class="col-sm-2 center-block">
+                            <asp:Button runat="server" ID="btnUpdate" Text="Actualizar" CssClass="form-control" OnClick="btnUpdate_Click" />
+                        </div>
+                        <div class="col-sm-2 center-block">
+                            <asp:Button runat="server" ID="btnNew" Text="Guardar" CssClass="form-control" OnClick="btnNew_Click" />
+                        </div>
+                        <div class="col-md-3"></div>
                     </div>
                 </div>
             </div>
