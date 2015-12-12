@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -140,19 +141,44 @@ public partial class Informacion : System.Web.UI.Page
     }
     private void ModificarDatos(int Id)
     {
-        string Nombre = txtNomb.Text.Trim();
-        int Tipo_Id = Convert.ToInt32(ddlTipo.SelectedValue);
-        int Color_Id = Convert.ToInt32(ddlColor.SelectedValue);
-        int Genero_Id = Convert.ToInt32(ddlGenero.SelectedValue);
-        int Existencias = Convert.ToInt32(txtExit.Text.Trim());
-        int Edad = Convert.ToInt32(txtEdad.Text.Trim());
-        decimal Peso = Convert.ToDecimal(txtPeso.Text.Trim());
-        bool Estatus = Convert.ToBoolean(1);
-        string FotoPortada = ViewState["FotoPortada"].ToString();
-        string FotoMini = ViewState["FotoMini"].ToString();
-        string Video = txtUrl.Text.Trim();
+        EntAnimal ani = new EntAnimal();
+        ani.Id = Id;
+        ani.Nombre = txtNomb.Text.Trim();
+        ani.Tipo_Id = Convert.ToInt32(ddlTipo.SelectedValue);
+        ani.Color_Id = Convert.ToInt32(ddlColor.SelectedValue);
+        ani.Genero_Id = Convert.ToInt32(ddlGenero.SelectedValue);
+        ani.Existencia = Convert.ToInt32(txtExit.Text.Trim());
+        ani.Edad = Convert.ToInt32(txtEdad.Text.Trim());
+        ani.Peso = Convert.ToDecimal(txtPeso.Text.Trim());
+        ani.Estatus = Convert.ToBoolean(1);
 
-        new DatAnimal().Actualizar(Id, Nombre, Tipo_Id, Color_Id, Genero_Id, Existencias, Edad, Peso, Estatus, FotoPortada, FotoMini, Video);
+        if (fuFotoPortada.HasFile)
+        {
+            string ruta = Server.MapPath(@"img\");
+            int fileSize = fuFotoPortada.PostedFile.ContentLength;
+            string extension = System.IO.Path.GetExtension(fuFotoPortada.FileName);
+            MemoryStream str = new MemoryStream(fuFotoPortada.FileBytes);
+            System.Drawing.Image bmp = System.Drawing.Image.FromStream(str);
+            int ancho = bmp.Width;
+            int alto = bmp.Height;
+            
+            if (fileSize <= 2100000 && (extension == ".jpg" || extension == ".jpeg") && (ancho == 1280 || alto == 720))
+            {
+                fuFotoPortada.SaveAs(ruta + fuFotoPortada.FileName);
+                ani.FotoPortada = "img\\" + fuFotoPortada.FileName;
+            }
+            else
+                MostrarMensaje(string.Format("Tu archivo {0} es demasiado grande o no cumple con la extension \"jpg\" o no cumple con las dimensiones 1280 * 720", fuFotoPortada.FileName));
+        }
+        else
+        {
+            ani.FotoPortada = ViewState["FotoPortada"].ToString();
+        }
+        ani.FotoMini = "img\\hipoMini.jpg";
+        ani.Video = txtUrl.Text.Trim() == "" ? "https://www.youtube.com/embed/xPndNFuqEWY" : txtUrl.Text.Trim();
+
+        new BusAnimal().Actualizar(ani);
+        Response.Redirect(Request.CurrentExecutionFilePath);
     }
     private void EliminarDatos(int Id)
     {
