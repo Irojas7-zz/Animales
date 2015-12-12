@@ -31,7 +31,7 @@ namespace Tico.Animales.DatAnimales
             return dt;
         }
 
-        public DataTable Insertar(string Nombre, int Tipo_Id, int Color_Id, int Genero_Id, int Existencias, int Edad, decimal Peso, bool Estatus, string FotoPortada, string FotoMini, string Video)
+        public int Insertar(string Nombre, int Tipo_Id, int Color_Id, int Genero_Id, int Existencias, int Edad, decimal Peso, bool Estatus, string FotoPortada, string FotoMini, string Video)
         {
             SqlCommand comm = new SqlCommand("sp_Insert_Animal", conn);
             comm.CommandType = CommandType.StoredProcedure;
@@ -47,10 +47,18 @@ namespace Tico.Animales.DatAnimales
             comm.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.NVarChar, ParameterName = "@FotoMini", Value = FotoMini });
             comm.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.NVarChar, ParameterName = "@Video", Value = Video });
 
-            SqlDataAdapter da = new SqlDataAdapter(comm);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            return dt;
+            try
+            {
+                conn.Open();
+                int filas = comm.ExecuteNonQuery();
+                conn.Close();
+                return filas;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                throw new ApplicationException(string.Format("Error al insertar el animal {0} en capa de datos, {1}", Nombre, ex.Message));
+            }
         }
 
         public DataTable Actualizar(int Id, string Nombre, int Tipo_Id, int Color_Id, int Genero_Id, int Existencias, int Edad, decimal Peso, bool Estatus, string FotoPortada, string FotoMini, string Video)

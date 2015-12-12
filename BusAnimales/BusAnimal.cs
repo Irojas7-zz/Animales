@@ -71,5 +71,12 @@ namespace Tico.Animales.BusAnimales
 
             return ani;
         }
+
+       public void Insertar(EntAnimal ent)
+        {
+            int filas = new DatAnimal().Insertar(ent.Nombre, ent.Tipo_Id, ent.Color_Id, ent.Genero_Id, ent.Existencia, ent.Edad, ent.Peso, ent.Estatus, ent.FotoPortada, ent.FotoMini, ent.Video);
+            if (filas != 1)
+                throw new ApplicationException("Error al insertar animal");
+        }
     }
 }

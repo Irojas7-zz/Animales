@@ -149,6 +149,7 @@
                 </div>
             </div>
         </div>
+        <asp:HiddenField runat="server" ID="hfId" />
     </form>
     <script src="js/jquery-2.1.4.js"></script>
     <script src="js/moment-with-locales.js"></script>
@@ -157,7 +158,8 @@
     <script type="text/javascript">
         $(function () {
             $('#txtFech').datetimepicker({
-                format: 'DD/MM/YYYY hh:mm A',
+                format: 'DD/MM/YYYY',
+                locale: 'es'
             });
         });
     </script>

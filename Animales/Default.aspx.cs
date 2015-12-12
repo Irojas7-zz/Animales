@@ -50,7 +50,7 @@ public partial class _Default : System.Web.UI.Page
             literal.Text += "                            <a href=\"Informacion.aspx?id=" + dt.Id + "\"><img src=\"" + dt.FotoPortada + "\" class=\"img-responsive\" title=\"" + dt.Nombre + "\" /></a>";
             literal.Text += "                        </div>";
             literal.Text += "                        <div class=\"panel-body\">";
-            literal.Text += "                            <div class=\"row\">";
+            literal.Text += "                            <div class=\"row\" style=\"height:170px; overflow:hidden;\">";
             literal.Text += "                                <div class=\"col-md-4\">";
             literal.Text += "                                    <img src=\"" + dt.FotoMini + "\" class=\"img-responsive\" />";
             literal.Text += "                                </div>";

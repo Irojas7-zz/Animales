@@ -13,7 +13,7 @@ public partial class Informacion : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         int id = Request.QueryString["Id"] == null ? 0 : Convert.ToInt32(Request.QueryString["Id"]);
-        ViewState["Id"] = id;
+        hfId.Value = id.ToString();
         if (!IsPostBack)
         {
             CargarCatalogos();
@@ -27,10 +27,10 @@ public partial class Informacion : System.Web.UI.Page
                 btnDelete.Visible = false;
                 btnUpdate.Visible = false;
                 //txtFech.Enabled = false;
-                txtFech.Text = DateTime.Today.ToString("dd/MM/yyyy hh:mm A"); 
+                txtFech.Text = DateTime.Today.ToString("dd/MM/yyyy HH:mm");
             }
         }
-              
+
 
         //ModificarDatos();
     }
@@ -39,17 +39,17 @@ public partial class Informacion : System.Web.UI.Page
         EntAnimal ani = new BusAnimal().Obtener(Id);
 
         txtNomb.Text = ani.Nombre;
-        txtExit.Text = Convert.ToString(ani.Existencia);
-        txtPeso.Text = Convert.ToString(ani.Peso);
-        txtFech.Text = Convert.ToString(ani.Fecha_Alta);
+        txtExit.Text = ani.Existencia.ToString();
+        txtPeso.Text = ani.Peso.ToString();
+        txtFech.Text = ani.Fecha_Alta.ToString();
         //txtFech.Text = ani.Fecha_Alta.ToString("dd/MM/yyyy");
-        txtEdad.Text = Convert.ToString(ani.Edad);
+        txtEdad.Text = string.Format("{0} años", ani.Edad);
         txtUrl.Text = ani.Video;
-        ddlTipo.SelectedValue = Convert.ToString(ani.Tipo_Id);
-        ddlColor.SelectedValue = Convert.ToString(ani.Color_Id);
-        ddlGenero.SelectedValue = Convert.ToString(ani.Genero_Id);
-        imgPort.Src = Convert.ToString(ani.FotoPortada);
-        imgMini.Src = Convert.ToString(ani.FotoMini);
+        ddlTipo.SelectedValue = ani.Tipo_Id.ToString();
+        ddlColor.SelectedValue = ani.Color_Id.ToString();
+        ddlGenero.SelectedValue = ani.Genero_Id.ToString();
+        imgPort.Src = ani.FotoPortada;
+        imgMini.Src = ani.FotoMini;
         urlVideo.Src = ani.Video;
 
         ViewState["FotoPortada"] = imgPort.Src;
@@ -76,31 +76,67 @@ public partial class Informacion : System.Web.UI.Page
     }
     protected void btnUpdate_Click(object sender, EventArgs e)
     {
-        ModificarDatos(Convert.ToInt32(ViewState["Id"]));
+        ModificarDatos(Convert.ToInt32(hfId.Value));
     }
     protected void btnDelete_Click(object sender, EventArgs e)
     {
-        EliminarDatos(Convert.ToInt32(ViewState["Id"]));
+        EliminarDatos(Convert.ToInt32(hfId.Value));
     }
     protected void btnNew_Click(object sender, EventArgs e)
     {
-        InsertarDatos();
+        try
+        {
+            InsertarDatos();
+        }
+        catch (Exception ex)
+        {
+            MostrarMensaje(ex.Message);
+        }
+       
     }
     private void InsertarDatos()
     {
-        string Nombre = txtNomb.Text.Trim();
-        int Tipo_Id = Convert.ToInt32(ddlTipo.SelectedValue);
-        int Color_Id = Convert.ToInt32(ddlColor.SelectedValue);
-        int Genero_Id = Convert.ToInt32(ddlGenero.SelectedValue);
-        int Existencias = Convert.ToInt32(txtExit.Text.Trim());
-        int Edad = Convert.ToInt32(txtEdad.Text.Trim());
-        decimal Peso = Convert.ToDecimal(txtPeso.Text.Trim());
-        bool Estatus = Convert.ToBoolean(1);
-        string FotoPortada = "img\\hipopotamo.jpg";
-        string FotoMini = "img\\hipoMini.jpg";
-        string Video = txtUrl.Text.Trim() == "" ? "https ://www.youtube.com/embed/xPndNFuqEWY" : txtUrl.Text.Trim();
+        EntAnimal ani = new EntAnimal();
+        ani.Nombre = txtNomb.Text.Trim();
+        ani.Tipo_Id = Convert.ToInt32(ddlTipo.SelectedValue);
+        ani.Color_Id = Convert.ToInt32(ddlColor.SelectedValue);
+        ani.Genero_Id = Convert.ToInt32(ddlGenero.SelectedValue);
+        ani.Existencia = Convert.ToInt32(txtExit.Text.Trim());
+        ani.Edad = Convert.ToInt32(txtEdad.Text.Trim());
+        ani.Peso = Convert.ToDecimal(txtPeso.Text.Trim());
+        ani.Estatus = Convert.ToBoolean(1);
 
-        new DatAnimal().Insertar(Nombre,Tipo_Id,Color_Id,Genero_Id,Existencias,Edad,Peso,Estatus,FotoPortada,FotoMini,Video);
+        if (fuFotoPortada.HasFile)
+        {
+            string ruta = Server.MapPath(@"img\");
+            int fileSize = fuFotoPortada.PostedFile.ContentLength;
+            string extension = System.IO.Path.GetExtension(fuFotoPortada.FileName);
+            if (fileSize <= 2100000 && (extension == ".jpg" || extension == ".jpeg"))
+            {
+                fuFotoPortada.SaveAs(ruta + fuFotoPortada.FileName);
+                ani.FotoPortada = "img\\" + fuFotoPortada.FileName;
+            }
+            else
+                MostrarMensaje(string.Format("Tu archivo {0} es demasiado grande o no cumple con la extension \"jpg\"", fuFotoPortada.FileName));
+        }
+        else
+        {
+            MostrarMensaje("Falta Foto de portada");
+        }
+        ani.FotoMini = "img\\hipoMini.jpg";
+        ani.Video = txtUrl.Text.Trim() == "" ? "https://www.youtube.com/embed/xPndNFuqEWY" : txtUrl.Text.Trim();
+        new BusAnimal().Insertar(ani);
+        Response.Redirect(Request.CurrentExecutionFilePath);
+    }
+    /// <summary>
+    /// Método para mostrar mensaje de texto en JavaScript
+    /// </summary>
+    /// <param name="mensaje"></param>
+    private void MostrarMensaje(string mensaje)
+    {
+        mensaje = mensaje.Replace("'", "").Replace("\n", "").Replace("\r", "");
+        string alerta = "alert('" + mensaje + "');";
+        ScriptManager.RegisterStartupScript(this, GetType(), "", alerta, true);
     }
     private void ModificarDatos(int Id)
     {
