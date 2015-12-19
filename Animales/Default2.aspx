@@ -124,7 +124,7 @@
                                     <asp:LinkButton ID="lnkEditar" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar"></asp:LinkButton>
                                 </ItemTemplate>
                                 <FooterTemplate>
-                                    <asp:LinkButton Text="Guardar" ID="lnkGuardar" runat="server" CssClass="btn btn-primary" OnClick="lnkGuardar_Click" />
+                                    <asp:LinkButton Text="Guardar" ID="lnkGuardar" runat="server" CssClass="btn btn-primary" OnClick="lnkGuardar_Click" CommandArgument='<%# Container.DataItemIndex %>' />
                                 </FooterTemplate>
                                 <FooterStyle HorizontalAlign="Center"></FooterStyle>
                             </asp:TemplateField>
@@ -132,7 +132,7 @@
                                 <ItemTemplate>
                                     <asp:LinkButton ID="lnkBorrar" runat="server" CausesValidation="False" CommandName="Delete" Text="Eliminar"></asp:LinkButton>
                                 </ItemTemplate>
-                            </asp:TemplateField>
+                            </asp:TemplateField>                            
                         </Columns>
                     </asp:GridView>
                 </div>

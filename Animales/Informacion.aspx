@@ -110,7 +110,7 @@
 
             <div class="panel panel-default col-sm-10 col-sm-offset-1">
                 <div class="panel-heading">
-                    <img id="imgPort" alt="animal" class="img-responsive" style="margin: auto" runat="server" />
+                    <img id="imgPort" alt="animal" class="img-responsive" style="margin: auto" runat="server" src="" />
                     <br />
                     <div class="row">
                         <div class="col-md-12 col-md-offset-5">

@@ -82,13 +82,13 @@ namespace Tico.Animales.BusAnimales
        {
            int filas = new DatAnimal().Actualizar(ent.Id,ent.Nombre, ent.Tipo_Id, ent.Color_Id, ent.Genero_Id, ent.Existencia, ent.Edad, ent.Peso, ent.Estatus, ent.FotoPortada, ent.FotoMini, ent.Video);
            if (filas != 1)
-               throw new ApplicationException("Error al insertar animal");
+               throw new ApplicationException("Error al actualizar animal");
        }
        public void Eliminar(int id)
        {
            int filas = new DatAnimal().Eliminar(id);
            if (filas != 1)
-               throw new ApplicationException("Error al insertar animal");
+               throw new ApplicationException("Error al elimnar animal");
        }
     }
 }

@@ -159,6 +159,25 @@ public partial class Default2 : System.Web.UI.Page
     }
     protected void lnkGuardar_Click(object sender, EventArgs e)
     {
-
+        
+        FileUpload fotoPortada = ((FileUpload)gvAnimales.FindControl("fuFotoPortadaEIT"));
+    
+        if (fotoPortada.HasFile)
+        {
+            string ruta = Server.MapPath(@"img\");
+            int fileSize = fotoPortada.PostedFile.ContentLength;
+            string extension = System.IO.Path.GetExtension(fotoPortada.FileName);
+            if (fileSize <= 2100000 && (extension == ".jpg" || extension == ".jpeg"))
+            {
+                fotoPortada.SaveAs(ruta + fotoPortada.FileName);
+                //ani.FotoPortada = "img\\" + fotoPortada.FileName;
+            }
+            else
+                MostrarMensaje(string.Format("Tu archivo {0} es demasiado grande o no cumple con la extension \"jpg\"", fotoPortada.FileName));
+        }
+        else
+        {
+            MostrarMensaje("Falta Foto de portada");
+        }
     }
 }
